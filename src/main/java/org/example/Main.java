@@ -88,7 +88,7 @@ public class Main {
     }
 
     /**
-     * ESERCIZIO 3
+     * ESERCIZIO 33
      * Scrivi un programma Java che verifica se un carattere è una vocale o una consonante.
      * @param carattere da controllare
      * @return vero se è una vocale, falso negli altri casi
