@@ -62,7 +62,7 @@ public class Main {
      */
     public static int somma(int a,int b) {
         int risposta=0;
-        // TODO: SCRIVI QUI IL CODICE
+        int risposta = a + b;
         return risposta;
     }
 
@@ -75,7 +75,15 @@ public class Main {
      */
     public static String isMaggiorenne(int age) {
         String risposta="maggiorenne,minorenne";
-        // TODO: SCRIVI QUI IL CODICE
+        public static String isMaggiorenne(int age) {
+        String risposta;
+    if (age >= 18) {
+        risposta = "maggiorenne";  // Se l'età è maggiore o uguale a 18, è maggiorenne
+    } else {
+        risposta = "minorenne";    // Altrimenti, è minorenne
+    }
+    return risposta;
+}
         return risposta;
     }
 
@@ -87,7 +95,14 @@ public class Main {
      */
     public static boolean isVocale(char carattere) {
         boolean risposta=false;
-        // TODO: SCRIVI QUI IL CODICE
+       public static boolean isVocale(char carattere) {
+    if (carattere == 'a' || carattere == 'e' || carattere == 'i' || carattere == 'o' || carattere == 'u' ||
+        carattere == 'A' || carattere == 'E' || carattere == 'I' || carattere == 'O' || carattere == 'U') {
+        return true;  
+    }
+    return false;
+}
+
         return risposta;
     }
 
@@ -101,7 +116,17 @@ public class Main {
      */
     public static String tipoTriangolo(float lato1, float lato2, float lato3) {
         String risposta="equilatero,isoscele,scaleno";
-        // TODO: SCRIVI QUI IL CODICE
+public static String tipoTriangolo(float lato1, float lato2, float lato3) {
+    if (lato1 == lato2 && lato2 == lato3) {
+        return "equilatero";
+    }
+    else if (lato1 == lato2 || lato2 == lato3 || lato1 == lato3) {
+        return "isoscele";
+    }
+    else {
+        return "scaleno";
+    }
+}
         return risposta;
     }
 
@@ -114,7 +139,11 @@ public class Main {
      */
     public static String giornoSettimana(int giorno) {
         String risposta="lunedì,martedì,mercoledì,giovedì,venerdì,sabato,domenica";
-        // TODO: SCRIVI QUI IL CODICE
+public static String giornoSettimana(int giorno) {
+    String[] giorni = {"lunedì", "martedì", "mercoledì", "giovedì", "venerdì", "sabato", "domenica"};
+    int indice = (giorno - 1) % 7; 
+    return giorni[indice];
+}
         return risposta;
     }
 
@@ -129,7 +158,16 @@ public class Main {
      */
     public static String ordineDecrescente(int fine, int inizio) {
         String risposta="100,99,98";
-        // TODO: SCRIVI QUI IL CODICE
+public static String ordineDecrescente(int fine, int inizio) {
+    StringBuilder risposta = new StringBuilder();  
+    for (int i = fine; i >= inizio; i--) {
+        if (i != fine) { 
+            risposta.append(",");
+        }
+        risposta.append(i);  
+    }
+    return risposta.toString();
+}
         return risposta;
     }
 
@@ -146,7 +184,23 @@ public class Main {
      */
     public static int giorniLumaca(float sale, float scende, float muro) {
         int risposta=0;
-        // TODO: SCRIVI QUI IL CODICE
+public static int giorniLumaca(float sale, float scende, float muro) {
+    int giorni = 0;
+    float altezza = 0;
+
+    while (altezza < muro) {
+        giorni++;  
+        altezza += sale;  
+
+        if (altezza >= muro) {
+            break;
+        }
+        
+        altezza -= scende; 
+    }
+    
+    return giorni;
+}
         return risposta;
     }
 
@@ -166,7 +220,13 @@ public class Main {
 
     public static String coordinatePunto(int x1, int y1, int x2, int y2,int x3,int y3) {
         String risposta="1,1";
-        // TODO: SCRIVI QUI IL CODICE
+public static String coordinatePunto(int x1, int y1, int x2, int y2, int x3, int y3) {
+    int x4 = (x1 == x2) ? x3 : (x1 == x3) ? x2 : x1;
+
+    int y4 = (y1 == y2) ? y3 : (y1 == y3) ? y2 : y1;
+
+    return x4 + "," + y4;
+}
         return risposta;
     }
 }
